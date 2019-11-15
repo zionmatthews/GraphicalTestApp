@@ -22,22 +22,65 @@ namespace GraphicalTestApp
 
         private Matrix3 _localTransform = new Matrix3();
         private Matrix3 _globalTransform = new Matrix3();
+        
+        //## Implement X and Y relative and absolute coordinates ##//
+        public float X
+        {
+            get { return 0; }
+            set { }
+        }
+        public float XAbsolute
+        {
+            get { return 0; }
+        }
+        public float Y
+        {
+            get { return 0; }
+            set { }
+        }
+        public float YAbsolute
+        {
+            get { return 0; }
+        }
 
-        //## Implement methods/properties for manipulating _localTransform ##//
+        //## Implement methods for rotating _localTransform ##//
+        public float GetRotation()
+        {
+            return 0;
+        }
 
+        public void Rotate(float radians)
+        {
+
+        }
+
+        //## Implement methods/properties for scaling _localTransform ##//
+        public float GetScale()
+        {
+            return 0;
+        }
+
+        public void Scale(float scale)
+        {
+
+        }
+
+        //## Implement AddChild(Actor) ##//
         public void AddChild(Actor child)
         {
-            //## Implement AddChild(Actor) ##//
+
         }
 
+        //## Implement RemoveChild(Actor) ##//
         public void RemoveChild(Actor child)
         {
-            //## Implement RemoveChild(Actor) ##//
+
         }
 
+        //## Implment UpdateTransform() ##//
         public void UpdateTransform()
         {
-            //## Implment UpdateTransform() ##//
+
         }
 
         //Call the OnStart events of the Actor and its children

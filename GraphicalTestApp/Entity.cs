@@ -7,9 +7,8 @@ namespace GraphicalTestApp
         private Vector3 _velocity = new Vector3();
         private Vector3 _acceleration = new Vector3();
 
-        //## Implement methods/properties for manipulating _velocity ##//
-        //## Implement methods/properties for manipulating _acceleration ##//
+        //## Implement methods/properties for accessing _velocity ##//
+        //## Implement methods/properties for accessing _acceleration ##//
 
-        private 
     }
 }

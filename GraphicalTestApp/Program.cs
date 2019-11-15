@@ -13,8 +13,11 @@ namespace GraphicalTestApp
             Game game = new Game(1280, 760, "Graphical Test Application");
 
             Actor root = new Actor();
-            Entity logo = new Entity();
-            
+            Entity player = new Entity();
+
+            root.AddChild(player);
+
+            game.Root = root;
 
             game.Run();
             Console.ReadKey();
