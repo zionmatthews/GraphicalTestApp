@@ -21,26 +21,24 @@ namespace GraphicalTestApp
         }
 
         //Default constructor
-        public Sprite()
-        {
-            OnDraw += Render;
-        }
-
-        //Loads an image from the specified path
-        public void Load(string path)
+        public Sprite(string path)
         {
             _image = RL.LoadImage(path);
             _texture = RL.LoadTextureFromImage(_image);
+            X = -Width / 2;
+            Y = -Height / 2;
         }
 
         //Draw the Sprite to the screen
-        private void Render()
+        public override void Draw()
         {
             RL.DrawTextureEx(
                 _texture,
-                new Vector2(XAbsolute - Width / 2, YAbsolute - Height / 2), GetRotation(),
+                new Vector2(XAbsolute, YAbsolute),
+                GetRotation() * (float)(180.0f / Math.PI),
                 GetScale(),
                 Color.WHITE);
+            base.Draw();
         }
     }
 }

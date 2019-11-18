@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Raylib;
-using RL = Raylib.Raylib;
 
 namespace GraphicalTestApp
 {
@@ -23,84 +21,92 @@ namespace GraphicalTestApp
         private Matrix3 _localTransform = new Matrix3();
         private Matrix3 _globalTransform = new Matrix3();
         
-        //## Implement X and Y relative and absolute coordinates ##//
         public float X
         {
+            //## Implement the relative X coordinate ##//
             get { return 0; }
             set { }
         }
         public float XAbsolute
         {
+            //## Implement the absolute X coordinate ##//
             get { return 0; }
         }
         public float Y
         {
+            //## Implement the relative Y coordinate ##//
             get { return 0; }
             set { }
         }
         public float YAbsolute
         {
+            //## Implement the absolute Y coordinate ##//
             get { return 0; }
         }
 
-        //## Implement methods for rotating _localTransform ##//
         public float GetRotation()
         {
+            //## Implement getting the rotation of _localTransform ##//
             return 0;
         }
 
         public void Rotate(float radians)
         {
-
+            //## Implement rotating _localTransform ##//
         }
 
-        //## Implement methods/properties for scaling _localTransform ##//
         public float GetScale()
         {
+            //## Implement getting the scale of _localTransform ##//
             return 0;
         }
 
         public void Scale(float scale)
         {
-
+            //## Implement scaling _localTransform ##//
         }
 
-        //## Implement AddChild(Actor) ##//
         public void AddChild(Actor child)
         {
-
+            //## Implement AddChild(Actor) ##//
         }
 
-        //## Implement RemoveChild(Actor) ##//
         public void RemoveChild(Actor child)
         {
-
+            //## Implement RemoveChild(Actor) ##//
         }
 
-        //## Implment UpdateTransform() ##//
         public void UpdateTransform()
         {
-
+            //## Implment UpdateTransform() ##//
         }
 
         //Call the OnStart events of the Actor and its children
-        public void Start()
+        public virtual void Start()
         {
+            //Call this Actor's OnStart events
             OnStart?.Invoke();
 
+            //Start all of this Actor's children
             foreach (Actor child in _children)
             {
                 child.Start();
             }
 
+            //Flag this Actor as having already started
             Started = true;
         }
 
         //Call the OnUpdate events of the Actor and its children
-        public void Update(float deltaTime)
+        public virtual void Update(float deltaTime)
         {
+            //Update this Actor and its children's transforms
+            UpdateTransform();
+
+            //Call this Actor's OnUpdate events
             OnUpdate?.Invoke(deltaTime);
 
+            //Update all of this Actor's children
             foreach (Actor child in _children)
             {
                 child.Update(deltaTime);
@@ -108,10 +114,12 @@ namespace GraphicalTestApp
         }
 
         //Call the OnDraw events of the Actor and its children
-        public void Draw()
+        public virtual void Draw()
         {
+            //Call this Actor's OnDraw events
             OnDraw?.Invoke();
 
+            //Update all of this Actor's children
             foreach (Actor child in _children)
             {
                 child.Draw();
