@@ -36,6 +36,8 @@ namespace GraphicalTestApp
         {
             Width = width;
             Height = height;
+            X = -Width / 2;
+            Y = -Height / 2;
         }
 
         public bool DetectCollision(AABB other)

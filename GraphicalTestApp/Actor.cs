@@ -23,25 +23,25 @@ namespace GraphicalTestApp
         
         public float X
         {
-            //## Implement the relative X coordinate ##//
-            get { return 0; }
-            set { }
+            //## Implement the relative X coordinate ##//                Fin
+            get { return _localTransform.m13; }
+            set { _localTransform.SetTranslation(value, Y, 1); }
         }
         public float XAbsolute
         {
-            //## Implement the absolute X coordinate ##//
-            get { return 0; }
+            //## Implement the absolute X coordinate ##//              Fin
+            get { return _globalTransform.m13; }
         }
         public float Y
         {
-            //## Implement the relative Y coordinate ##//
-            get { return 0; }
-            set { }
+            //## Implement the relative Y coordinate ##//            Fin
+            get { return _localTransform.m23;  }
+            set { _localTransform.SetTranslation(X, value, 1); }
         }
         public float YAbsolute
         {
-            //## Implement the absolute Y coordinate ##//
-            get { return 0; }
+            //## Implement the absolute Y coordinate ##//              Fin
+            get { return _globalTransform.m23;  }
         }
 
         public float GetRotation()
@@ -52,7 +52,8 @@ namespace GraphicalTestApp
 
         public void Rotate(float radians)
         {
-            //## Implement rotating _localTransform ##//
+            //## Implement rotating _localTransform ##//                Fin
+            _localTransform.RotateZ(radians);
         }
 
         public float GetScale()
@@ -68,17 +69,40 @@ namespace GraphicalTestApp
 
         public void AddChild(Actor child)
         {
-            //## Implement AddChild(Actor) ##//
+            //## Implement AddChild(Actor) ##//              Fin
+            if(child.Parent != null)
+            {
+                return;
+            }
+            //Assign this as the child's parent
+            child.Parent = this;
+            //Add to coolection
+            _children.Add(child);
         }
 
         public void RemoveChild(Actor child)
         {
-            //## Implement RemoveChild(Actor) ##//
+            //## Implement RemoveChild(Actor) ##//          Fin
+            bool isMyChild = _children.Remove(child);
+            _localTransform = _globalTransform;
         }
 
         public void UpdateTransform()
         {
-            //## Implment UpdateTransform() ##//
+            //## Implment UpdateTransform() ##//     Fin
+            if(Parent != null)
+            {
+                _globalTransform = Parent._globalTransform * _localTransform;
+            }
+            else
+            {
+                _globalTransform = _localTransform;
+            }
+
+            foreach (Actor child in _children)
+            {
+                child.UpdateTransform();
+            }
         }
 
         //Call the OnStart events of the Actor and its children
