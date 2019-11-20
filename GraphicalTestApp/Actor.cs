@@ -52,7 +52,19 @@ namespace GraphicalTestApp
             return 0;
         }
 
+        public float GetRotationAbsolute()
+        {
+            //## Implement getting the rotation of _globalTransform ##//
+            return 0;
+        }
+
         public void Rotate(float radians)
+        {
+            //## Implement rotating _localTransform ##//                Fin
+            _localTransform.RotateZ(radians);
+        }
+
+        public void SetRotation(float radians)
         {
             //## Implement rotating _localTransform ##//                Fin
             _localTransform.RotateZ(radians);
