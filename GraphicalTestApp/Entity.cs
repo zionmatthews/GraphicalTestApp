@@ -7,6 +7,10 @@ namespace GraphicalTestApp
         private Vector3 _velocity = new Vector3();
         private Vector3 _acceleration = new Vector3();
 
+        public char Icon { get; set; } = ' ';
+
+        public Sprite Image { get; set; }
+
         public float XVelocity
         {
             //## Implement velocity on the X axis ##//        Fin
@@ -37,6 +41,20 @@ namespace GraphicalTestApp
         {
             X = x;
             Y = y;
+        }
+
+        //Creates an Entity with the specified icon and default values
+        public Entity(char icon)
+        {
+            Icon = icon;
+        }
+
+        //Creates an entity with the specified icon and image
+        public Entity(char icon, string imageName) : this(icon)
+        {
+            Image = new Sprite();
+            Sprite.Load(imageName);
+            AddChild(Image);
         }
 
         public override void Update(float deltaTime)

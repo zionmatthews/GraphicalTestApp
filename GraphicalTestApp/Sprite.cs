@@ -21,7 +21,7 @@ namespace GraphicalTestApp
         }
 
         //Default constructor
-        public Sprite(string path)
+        public void Load(string path)
         {
             _image = RL.LoadImage(path);
             _texture = RL.LoadTextureFromImage(_image);
