@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
 using Raylib;
 using RL = Raylib.Raylib;
 
@@ -20,6 +25,20 @@ namespace GraphicalTestApp
         {
             RL.InitWindow(width, height, title);
             RL.SetTargetFPS(0);
+        }
+
+
+        private void Init()
+        {
+            //Adding the tank to the scene. and positioning it.
+            Tank body = new Tank("tankBlue_outline.png");
+            body.X = 0;
+            body.Y = 0;
+            Entity _turrent = new Entity('/');
+            body.AddChild(_turrent);
+            _turrent.X += 0;
+            _turrent.Y += 0;
+            
         }
 
 

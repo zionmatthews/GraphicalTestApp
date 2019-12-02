@@ -20,6 +20,16 @@ namespace GraphicalTestApp
             get { return _texture.height; }
         }
 
+        public Texture2D Texture
+        {
+            get { return _texture; }
+        }
+
+        public Sprite()
+        {
+
+        }
+
         //Default constructor
         public void Load(string path)
         {
