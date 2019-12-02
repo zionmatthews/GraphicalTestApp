@@ -37,7 +37,7 @@ namespace GraphicalTestApp
                 new Vector2(XAbsolute, YAbsolute),
                 GetRotation() * (float)(180.0f / Math.PI),
                 GetScale(),
-                Color.WHITE);
+                Color.BLACK);
             base.Draw();
         }
     }

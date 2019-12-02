@@ -15,10 +15,10 @@ namespace GraphicalTestApp
 
         public Tank(float x, float y) : base(x, y)
         {
-           // _sprite = new Sprite("");
-           // _hitbox = new AABB(Tank);
-           // AddChild(_sprite);
-           // AddChild(_hitbox);
+            // _sprite = new Sprite("");
+            // _hitbox = new AABB(Tank);
+            // AddChild(_sprite);
+            // AddChild(_hitbox);
             _instance = this;
         }
 
@@ -27,10 +27,10 @@ namespace GraphicalTestApp
 
         }
 
-        public Tank(string imageName) : base('=' , imageName)
+        public Tank(string imageName) : base('=', imageName)
         {
             //Bind movement methods to the arrow keys
-            
+
         }
 
         public Tank(char icon) : base(icon)

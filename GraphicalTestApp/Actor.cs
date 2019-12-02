@@ -22,7 +22,7 @@ namespace GraphicalTestApp
 
         private Matrix3 _localTransform = new Matrix3();
         private Matrix3 _globalTransform = new Matrix3();
-        
+
         public float X
         {
             //## Implement the relative X coordinate ##//                Fin
@@ -37,13 +37,13 @@ namespace GraphicalTestApp
         public float Y
         {
             //## Implement the relative Y coordinate ##//            Fin
-            get { return _localTransform.m23;  }
+            get { return _localTransform.m23; }
             set { _localTransform.SetTranslation(X, value, 1); }
         }
         public float YAbsolute
         {
             //## Implement the absolute Y coordinate ##//              Fin
-            get { return _globalTransform.m23;  }
+            get { return _globalTransform.m23; }
         }
 
         public float GetRotation()
@@ -84,7 +84,7 @@ namespace GraphicalTestApp
         public void AddChild(Actor child)
         {
             //## Implement AddChild(Actor) ##//              Fin
-            if(child.Parent != null)
+            if (child.Parent != null)
             {
                 return;
             }
@@ -104,7 +104,7 @@ namespace GraphicalTestApp
         public void UpdateTransform()
         {
             //## Implment UpdateTransform() ##//     Fin
-            if(Parent != null)
+            if (Parent != null)
             {
                 _globalTransform = Parent._globalTransform * _localTransform;
             }

@@ -4,9 +4,9 @@ using RL = Raylib.Raylib;
 
 namespace GraphicalTestApp
 {
-     class Input
+    class Input
     {
-        
+
         //Returns whether the key was pressed since the last frame
         public static bool IsKeyPressed(int key)
         {

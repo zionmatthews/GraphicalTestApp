@@ -26,7 +26,7 @@ namespace GraphicalTestApp
         public float YVelocity
         {
             //## Implement velocity on the Y axis ##//   Fin
-            get { return _velocity.y;  }
+            get { return _velocity.y; }
             set { _velocity.y = value; }
         }
         public float YAcceleration
@@ -53,7 +53,7 @@ namespace GraphicalTestApp
         public Entity(char icon, string imageName) : this(icon)
         {
             Image = new Sprite();
-            Sprite.Load(imageName);
+            Image.Load(imageName);
             AddChild(Image);
         }
 

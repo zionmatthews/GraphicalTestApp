@@ -13,13 +13,17 @@ namespace GraphicalTestApp
         //The Timer for the entire Game
         private Timer _gameTimer = new Timer();
 
+
+
         //Creates a Game and new Scene instance as its active Scene
         public Game(int width, int height, string title)
         {
             RL.InitWindow(width, height, title);
             RL.SetTargetFPS(0);
         }
-        
+
+
+
         //Run the game loop
         public void Run()
         {
@@ -43,7 +47,7 @@ namespace GraphicalTestApp
 
                 //Draw the active Scene
                 RL.BeginDrawing();
-                RL.ClearBackground(Color.BLACK);
+                RL.ClearBackground(Color.PINK);
                 _root.Draw();
                 RL.EndDrawing();
             }
