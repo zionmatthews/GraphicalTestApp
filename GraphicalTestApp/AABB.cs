@@ -4,6 +4,8 @@ namespace GraphicalTestApp
 {
     class AABB : Actor
     {
+        Raylib.Color _color = Raylib.Color.GOLD;
+
         public float Width { get; set; } = 1;
         public float Height { get; set; } = 1;
 
@@ -55,12 +57,8 @@ namespace GraphicalTestApp
         //Draw the bounding box to the screen
         public override void Draw()
         {
-            Raylib.Rectangle rec = new Raylib.Rectangle(
-                 XAbsolute - Width / 2,
-                 YAbsolute - Height / 2,
-                 Width,
-                 Height);
-            Raylib.Raylib.DrawRectangleLinesEx(rec, 5, Raylib.Color.WHITE);
+            Raylib.Rectangle rec = new Raylib.Rectangle(Left, Top, Width, Height );
+            Raylib.Raylib.DrawRectangleLinesEx(rec, 5, _color);
             base.Draw();
         }
     }
