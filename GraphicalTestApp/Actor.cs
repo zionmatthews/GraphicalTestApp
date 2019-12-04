@@ -48,14 +48,14 @@ namespace GraphicalTestApp
 
         public float GetRotation()
         {
-            //## Implement getting the rotation of _localTransform ##//
-            return 0;
+            //## Implement getting the rotation of _localTransform ##//     Fin
+            return (float)Math.Atan2(_localTransform.m21, _localTransform.m11);
         }
 
         public float GetRotationAbsolute()
         {
-            //## Implement getting the rotation of _globalTransform ##//
-            return 0;
+            //## Implement getting the rotation of _globalTransform ##//         Fin
+            return (float)Math.Atan2(_globalTransform.m21, _globalTransform.m11);
         }
 
         public void Rotate(float radians)

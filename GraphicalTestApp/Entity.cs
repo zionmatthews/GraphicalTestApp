@@ -37,33 +37,33 @@ namespace GraphicalTestApp
         }
 
         //Creates an Entity at the specified coordinates
-        public Entity(float x, float y)
+        public Entity(float x, float y) : base()
         {
             X = x;
             Y = y;
         }
 
         //Creates an Entity with the specified icon and default values
-        public Entity(char icon)
-        {
-            Icon = icon;
-        }
+        //public Entity(char icon)
+        //{
+        //    Icon = icon;
+        //}
 
-        //Creates an entity with the specified icon and image
-        public Entity(char icon, string imageName) : this(icon)
-        {
-            Image = new Sprite();
-            Image.Load(imageName);
-            AddChild(Image);
-        }
+        ////Creates an entity with the specified icon and image
+        //public Entity(char icon, string imageName) : this(icon)
+        //{
+        //    Image = new Sprite();
+        //    // Image.Load(imageName);
+        //    AddChild(Image);
+        //}
 
         public override void Update(float deltaTime)
         {
-            //## Calculate velocity from acceleration ##//
-
+            //## Calculate velocity from acceleration ##//       Fin
+            _velocity = _velocity + _acceleration * deltaTime;
             X += _velocity.x * deltaTime;
             Y += _velocity.y * deltaTime;
-            //## Calculate position from velocity ##//
+            //## Calculate position from velocity ##//             Fin
             base.Update(deltaTime);
         }
     }

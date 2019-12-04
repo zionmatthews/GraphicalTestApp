@@ -8,32 +8,38 @@ namespace GraphicalTestApp
 {
     class Tank : Entity
     {
-        private Input _input = new Input();
-        private Entity _turrnet = new Entity('|');
-        private static Tank _instance;
+        private AABB _outline;
+        private Sprite _tank;
 
 
-        public Tank(float x, float y) : base(x, y)
+        public Tank(float x, float y, string path) : base(x, y)
         {
-            // _sprite = new Sprite("");
-            // _hitbox = new AABB(Tank);
-            // AddChild(_sprite);
-            // AddChild(_hitbox);
-            _instance = this;
-        }
+            _tank = new Sprite(path);
+            _outline = new AABB(20, 20);
 
-        public Tank() : this('=')
-        {
+
+            AddChild(_tank);
+            AddChild(_outline);
 
         }
 
-        public Tank(string imageName) : base('=', imageName)
+        public Tank() : this(640, 380, "tankBlue_outline.png")
         {
-            //Bind movement methods to the arrow keys
 
         }
 
-        public Tank(char icon) : base(icon)
+        public Tank(string path) : this(640, 380, path)
+        {
+
+
+        }
+
+        public Tank(float x, float y) : this(x, y, "tankBlue_outline.png")
+        {
+
+        }
+
+        public void  Movement()
         {
 
         }

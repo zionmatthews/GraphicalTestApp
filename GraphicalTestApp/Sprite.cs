@@ -31,7 +31,7 @@ namespace GraphicalTestApp
         }
 
         //Default constructor
-        public void Load(string path)
+        public Sprite(string path)
         {
             _image = RL.LoadImage(path);
             _texture = RL.LoadTextureFromImage(_image);
@@ -45,9 +45,9 @@ namespace GraphicalTestApp
             RL.DrawTextureEx(
                 _texture,
                 new Vector2(XAbsolute, YAbsolute),
-                GetRotation() * (float)(180.0f / Math.PI),
+                GetRotationAbsolute() * (float)(180.0f / Math.PI),
                 GetScale(),
-                Color.BLACK);
+                Color.WHITE);
             base.Draw();
         }
     }
