@@ -16,7 +16,7 @@ namespace GraphicalTestApp
         public Tank(float x, float y, string path) : base(x, y)
         {
             _tank = new Sprite(path);
-            _outline = new AABB(20, 20);
+            _outline = new AABB(95, 95);
             _turret = new Turret(0, 0);
 
             AddChild(_tank);
@@ -65,8 +65,8 @@ namespace GraphicalTestApp
 
         public void Rotateleft(float deltatime)
         {
-            //Rotates the object to the right
-            if (Input.IsKeyDown(81))
+            //Rotates the Tank to the left
+            if (Input.IsKeyDown(65))
             {
 
                 Rotate(-1f * deltatime);
@@ -76,8 +76,8 @@ namespace GraphicalTestApp
 
         public void Rotateright(float deltatime)
         {
-            //Rotates the object to the right
-            if (Input.IsKeyDown(69))
+            //Rotates the tank to the right
+            if (Input.IsKeyDown(68))
             {
 
                 Rotate(1f * deltatime);

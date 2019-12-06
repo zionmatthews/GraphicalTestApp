@@ -14,8 +14,8 @@ namespace GraphicalTestApp
         {
             _turret = new Sprite("barrelBlue.png");
 
-            _turret.X = -5;
-            _turret.Y = -40;
+            _turret.X = -8.0f;
+            _turret.Y = -45;
 
             X = 0;
             Y = 0;
@@ -29,7 +29,7 @@ namespace GraphicalTestApp
 
         public void Rotateleft(float deltatime)
         {
-            //Rotates the object to the right
+            //Rotates the Turrent to the left (q)
             if (Input.IsKeyDown(81))
             {
 
@@ -40,12 +40,14 @@ namespace GraphicalTestApp
 
         public void Rotateright(float deltatime)
         {
-            //Rotates the object to the right
+            //Rotates the Turrent to the right (e)
             if (Input.IsKeyDown(69))
             {
 
                 Rotate(1f * deltatime);
             }
         }
+
+     
     }
 }

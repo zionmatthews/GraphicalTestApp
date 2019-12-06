@@ -81,6 +81,17 @@ namespace GraphicalTestApp
         {
             //## Implement scaling _localTransform ##//            Fin
             _localTransform.Scale(scale, scale, 1);
+            UpdateTransform();
+        }
+
+        public Vector3 GetDirection()
+        {
+            return new Vector3(_localTransform.m12, _localTransform.m11, 0);
+        }
+
+        public Vector3 GetDirectionAbsolute()
+        {
+            return new Vector3(_globalTransform.m12, _globalTransform.m11, 0);
         }
 
         public void AddChild(Actor child)

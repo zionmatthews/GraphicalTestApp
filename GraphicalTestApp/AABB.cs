@@ -57,7 +57,7 @@ namespace GraphicalTestApp
         public override void Draw()
         {
             Raylib.Rectangle rec = new Raylib.Rectangle(Left, Top, Width, Height);
-            Raylib.Raylib.DrawRectangleLinesEx(rec, 5, _color);
+            Raylib.Raylib.DrawRectangleLinesEx(rec, 3, _color);
             base.Draw();
         }
     }
