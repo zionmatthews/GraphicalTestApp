@@ -38,8 +38,7 @@ namespace GraphicalTestApp
         {
             Width = width;
             Height = height;
-            X = -Width / 2;
-            Y = -Height / 2;
+
         }
 
         public bool DetectCollision(AABB other)
@@ -57,7 +56,7 @@ namespace GraphicalTestApp
         //Draw the bounding box to the screen
         public override void Draw()
         {
-            Raylib.Rectangle rec = new Raylib.Rectangle(Left, Top, Width, Height );
+            Raylib.Rectangle rec = new Raylib.Rectangle(Left, Top, Width, Height);
             Raylib.Raylib.DrawRectangleLinesEx(rec, 5, _color);
             base.Draw();
         }

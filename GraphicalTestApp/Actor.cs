@@ -62,6 +62,7 @@ namespace GraphicalTestApp
         {
             //## Implement rotating _localTransform ##//                Fin
             _localTransform.RotateZ(radians);
+            UpdateTransform();
         }
 
         public void SetRotation(float radians)
@@ -72,13 +73,14 @@ namespace GraphicalTestApp
 
         public float GetScale()
         {
-            //## Implement getting the scale of _localTransform ##//
-            return 0;
+            //## Implement getting the scale of _localTransform ##//         Fin
+            return 1;
         }
 
         public void Scale(float scale)
         {
-            //## Implement scaling _localTransform ##//
+            //## Implement scaling _localTransform ##//            Fin
+            _localTransform.Scale(scale, scale, 1);
         }
 
         public void AddChild(Actor child)

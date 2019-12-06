@@ -25,10 +25,9 @@ namespace GraphicalTestApp
             //Accesses the tank class
             Tank user = new Tank(640, 380);
 
-            //Accesses the Sprite class
-            Sprite guest = new Sprite();
 
-            //Assigns variable to Child 
+
+            //Assigns variable to Child
             root.AddChild(user);
 
             game.Run();

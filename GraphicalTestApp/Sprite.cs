@@ -20,23 +20,17 @@ namespace GraphicalTestApp
             get { return _texture.height; }
         }
 
-        public Texture2D Texture
-        {
-            get { return _texture; }
-        }
 
-        public Sprite()
-        {
 
-        }
+
 
         //Default constructor
         public Sprite(string path)
         {
             _image = RL.LoadImage(path);
             _texture = RL.LoadTextureFromImage(_image);
-            X = Width / 2;
-            Y = Height / 2;
+            X = -Width / 2;
+            Y = -Height / 2;
         }
 
         //Draw the Sprite to the screen
