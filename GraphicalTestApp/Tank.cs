@@ -24,8 +24,7 @@ namespace GraphicalTestApp
             AddChild(_turret);
 
             OnUpdate += Movement;
-            OnUpdate += Rotateleft;
-            OnUpdate += Rotateright;
+
 
         }
 
@@ -63,26 +62,7 @@ namespace GraphicalTestApp
             }
         }
 
-        public void Rotateleft(float deltatime)
-        {
-            //Rotates the Tank to the left
-            if (Input.IsKeyDown(65))
-            {
 
-                Rotate(-1f * deltatime);
-            }
-        }
-
-
-        public void Rotateright(float deltatime)
-        {
-            //Rotates the tank to the right
-            if (Input.IsKeyDown(68))
-            {
-
-                Rotate(1f * deltatime);
-            }
-        }
 
 
 

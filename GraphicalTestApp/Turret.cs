@@ -29,7 +29,7 @@ namespace GraphicalTestApp
 
         public void Rotateleft(float deltatime)
         {
-            //Rotates the Turrent to the left (q)
+            //Rotates the Turrent to the left (Q)
             if (Input.IsKeyDown(81))
             {
 
@@ -40,7 +40,7 @@ namespace GraphicalTestApp
 
         public void Rotateright(float deltatime)
         {
-            //Rotates the Turrent to the right (e)
+            //Rotates the Turrent to the right (E)
             if (Input.IsKeyDown(69))
             {
 
@@ -48,6 +48,6 @@ namespace GraphicalTestApp
             }
         }
 
-     
+
     }
 }

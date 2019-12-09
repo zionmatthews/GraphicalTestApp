@@ -22,8 +22,8 @@ namespace GraphicalTestApp
 
             //## Set up game here ##//
 
-            //Accesses the tank class
-            Tank user = new Tank(640, 380);
+            //Accesses the ObjectAxis class
+            ObjectAxis user = new ObjectAxis(640, 380);
 
 
 
