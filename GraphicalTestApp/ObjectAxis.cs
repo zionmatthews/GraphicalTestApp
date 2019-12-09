@@ -24,7 +24,7 @@ namespace GraphicalTestApp
 
         public void TankAxis(float deltatime)
         {
-
+            
             _tank.Y = 0;
             X = _tank.XAbsolute;
             Y = _tank.YAbsolute;

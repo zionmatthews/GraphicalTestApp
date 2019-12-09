@@ -48,6 +48,11 @@ namespace GraphicalTestApp
             }
         }
 
+        public void Fire()
+        {
+
+        }
+
 
     }
 }
