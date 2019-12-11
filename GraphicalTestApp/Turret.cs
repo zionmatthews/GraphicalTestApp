@@ -57,14 +57,15 @@ namespace GraphicalTestApp
             //Shoots the turret (Space Bar)
             if (Input.IsKeyDown(32))
             {
-                Bullet _bullet = new Bullet(XAbsolute, YAbsolute);
+                Bullet Turretbullet = new Bullet(XAbsolute, YAbsolute, 0);
                 Vector3 direction = GetDirectionAbsolute();
-                _bullet.Rotate(GetRotationAbsolute());
-                _bullet.X += direction.x * -50f;
-                _bullet.Y += direction.y * -50f;
-                _bullet.XVelocity += direction.x * -300f;
-                _bullet.YVelocity += direction.y * -300f;
-                Parent.AddChild(_bullet);
+                direction.Normalize();
+                direction *= 30;
+                Turretbullet.X = -8.0f;
+                Turretbullet.Y = -50;
+                Turretbullet.XVelocity = direction.x* -8.0f;
+                Turretbullet.YVelocity = direction.y* -45;
+                AddChild(Turretbullet);
             }
         }
 
@@ -77,5 +78,15 @@ namespace GraphicalTestApp
                  Parent.Parent.AddChild(_bullet); */
 
 
+
+
+      /*  Bullet _bullet = new Bullet(XAbsolute, YAbsolute);
+        Vector3 direction = GetDirectionAbsolute();
+        _bullet.Rotate(GetRotationAbsolute());
+                _bullet.X += direction.x* -50f;
+                _bullet.Y += direction.y* -50f;
+                _bullet.XVelocity += direction.x* -300f;
+                _bullet.YVelocity += direction.y* -300f;
+                AddChild(_bullet); */
     }
 }

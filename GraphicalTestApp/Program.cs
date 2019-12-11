@@ -23,7 +23,7 @@ namespace GraphicalTestApp
             //## Set up game here ##//
 
             //Accesses the ObjectAxis class
-            ObjectAxis user = new ObjectAxis(640, 380);
+            ObjectAxis user = new ObjectAxis(640, 380, 0);
 
 
 

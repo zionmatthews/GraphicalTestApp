@@ -9,13 +9,18 @@ namespace GraphicalTestApp
     class ObjectAxis : Entity
     {
         private Tank _tank;
+        private AABB _boxline;
+        private int _num;
+        static public List<AABB> hitbox = new List<AABB>();
 
-        public ObjectAxis(float x, float y) : base(x, y)
+        public ObjectAxis(float x, float y, int num) : base(x, y)
         {
             _tank = new Tank(0, 0);
-
-
+            _boxline = new AABB(10, 10);
+            hitbox.Insert(num, _boxline);
+            _num = num;
             AddChild(_tank);
+                       
 
             OnUpdate += TankAxis;
             OnUpdate += Rotateright;
@@ -50,5 +55,7 @@ namespace GraphicalTestApp
                 Rotate(1f * deltatime);
             }
         }
+
+
     }
 }

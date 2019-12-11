@@ -11,6 +11,7 @@ namespace GraphicalTestApp
         private AABB _outline;
         private Sprite _tank;
         private Turret _turret;
+       
 
 
         public Tank(float x, float y, string path) : base(x, y)
@@ -18,6 +19,7 @@ namespace GraphicalTestApp
             _tank = new Sprite(path);
             _outline = new AABB(95, 95);
             _turret = new Turret(0, 0);
+            
 
             AddChild(_tank);
             AddChild(_outline);
