@@ -61,11 +61,11 @@ namespace GraphicalTestApp
                 Vector3 direction = GetDirectionAbsolute();
                 direction.Normalize();
                 direction *= 30;
-                Turretbullet.X = -8.0f;
-                Turretbullet.Y = -50;
+                Turretbullet.X =XAbsolute + direction.x* -8.0f;
+                Turretbullet.Y =YAbsolute + direction.y* -10;
                 Turretbullet.XVelocity = direction.x* -8.0f;
                 Turretbullet.YVelocity = direction.y* -45;
-                AddChild(Turretbullet);
+                Parent.Parent.Parent.AddChild(Turretbullet);
             }
         }
 

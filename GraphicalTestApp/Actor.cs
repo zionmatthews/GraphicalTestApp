@@ -101,17 +101,25 @@ namespace GraphicalTestApp
             {
                 return;
             }
-            //Assign this as the child's parent
-            child.Parent = this;
-            //Add to coolection
-            _children.Add(child);
+            if(child.Parent == null)
+            {
+                //Assign this as the child's parent
+                child.Parent = this;
+                _additions.Add(child);
+            }
+           
+            
+            
         }
 
         public void RemoveChild(Actor child)
         {
             //## Implement RemoveChild(Actor) ##//          Fin
-            bool isMyChild = _children.Remove(child);
-            _localTransform = _globalTransform;
+            if(child.Parent == this)
+            {
+                child.Parent = null;
+                _removals.Add(child);
+            }
         }
 
         public void UpdateTransform()
