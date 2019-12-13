@@ -43,20 +43,15 @@ namespace GraphicalTestApp
 
         public bool DetectCollision(AABB other)
         {
-            //## Implement DetectCollision(AABB) ##//
+            //## Implement DetectCollision(AABB) ##//         Fin
 
-            if ((other.Left < Right) && (other.Bottom > Top) && (other.Top < Bottom) && (other.Right > Left))
-            {
-                _color = Raylib.Color.BLUE;
-                return true;
-
-
-            }
-            else
+            if (Left < other.Right && Right > other.Left && Top < other.Bottom && Bottom > other.Top)
             {
                 _color = Raylib.Color.RED;
-                return false;
+                return true;
             }
+            _color = Raylib.Color.GOLD;
+            return false;
         }
 
         public bool DetectCollision(Vector3 point)

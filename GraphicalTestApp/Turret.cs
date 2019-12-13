@@ -9,12 +9,13 @@ namespace GraphicalTestApp
     class Turret : Actor
     {
         private Sprite _turret;
+        private Bullet _bullet;
 
 
         public Turret(float x, float y)
         {
             _turret = new Sprite("barrelBlue.png");
-
+            _bullet = new Bullet(0, 0);
 
             _turret.X = -8.0f;
             _turret.Y = -45;
@@ -29,6 +30,7 @@ namespace GraphicalTestApp
             OnUpdate += Rotateleft;
             OnUpdate += Rotateright;
             OnUpdate += Fire;
+            OnUpdate += BulletCollision;
         }
 
         public void Rotateleft(float deltatime)
@@ -52,41 +54,32 @@ namespace GraphicalTestApp
             }
         }
 
+        //A failed feature rip :(
+        public void BulletCollision(float deltatime)
+        {
+            if (_bullet.GetAABB.DetectCollision(Program.box) == true)
+            {
+                RemoveChild(_bullet);
+            }
+        }
+
         public void Fire(float deltatime)
         {
             //Shoots the turret (Space Bar)
             if (Input.IsKeyDown(32))
             {
-                Bullet Turretbullet = new Bullet(XAbsolute, YAbsolute, 0);
+                Bullet Turretbullet = new Bullet(XAbsolute, YAbsolute);
                 Vector3 direction = GetDirectionAbsolute();
                 direction.Normalize();
                 direction *= 30;
-                Turretbullet.X =XAbsolute + direction.x* -8.0f;
-                Turretbullet.Y =YAbsolute + direction.y* -10;
-                Turretbullet.XVelocity = direction.x* -8.0f;
-                Turretbullet.YVelocity = direction.y* -45;
+                Turretbullet.X = XAbsolute + direction.x * -2;
+                Turretbullet.Y = YAbsolute + direction.y * -2;
+                Turretbullet.XVelocity = direction.x * -8.0f;
+                Turretbullet.YVelocity = direction.y * -45;
                 Parent.Parent.Parent.AddChild(Turretbullet);
             }
         }
 
-        /* Bullet _bullet = new Bullet(XAbsolute, YAbsolute);
-         Vector3 direction = GetDirectionAbsolute();
-         direction.Normalize();
-                 direction *= 50;
-                 _bullet.XVelocity = direction.x;
-                 _bullet.YVelocity = direction.y;
-                 Parent.Parent.AddChild(_bullet); */
 
-
-
-
-      /*  Bullet _bullet = new Bullet(XAbsolute, YAbsolute);
-        Vector3 direction = GetDirectionAbsolute();
-        _bullet.Rotate(GetRotationAbsolute());
-                _bullet.X += direction.x* -50f;
-                _bullet.Y += direction.y* -50f;
-                _bullet.XVelocity += direction.x* -300f;
-                _bullet.YVelocity += direction.y* -300f;
-                AddChild(_bullet); */
     }
 }
